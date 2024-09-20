@@ -2,7 +2,7 @@ const Footer = () => {
   return (
     <>
       <footer className="py-5 text-center bg-body-tertiary mt-5">
-        <div class="d-flex logo-footer">
+        <div className="d-flex logo-footer">
           <a href="./pagina_principal.html">
             <img
               src="./img/LogoVeterinaria.png"
@@ -10,15 +10,15 @@ const Footer = () => {
               style={{ width: 100 }}
             />
           </a>
-          <p class="copy">Clínica Veterinaria</p>
+          <p className="copy">Clínica Veterinaria</p>
         </div>
 
-        <ul class="wrapper">
-          <li class="icon facebook">
+        <ul className="wrapper">
+          <li className="icon facebook">
             <a href="https://www.facebook.com">
-              <span class="tooltip">Facebook</span>
+              <span className="tooltip">Facebook</span>
               <span>
-                <i class="fab fa-facebook-f">
+                <i className="fab fa-facebook-f">
                   <img
                     src="https://static-00.iconduck.com/assets.00/facebook-color-icon-2048x2048-bfly1vxr.png"
                     alt=""
@@ -28,11 +28,11 @@ const Footer = () => {
               </span>
             </a>
           </li>
-          <li class="icon twitter">
+          <li className="icon twitter">
             <a href="https://x.com/">
-              <span class="tooltip">Twitter</span>
+              <span className="tooltip">Twitter</span>
               <span>
-                <i class="fab fa-twitter">
+                <i className="fab fa-twitter">
                   <img
                     src="https://cdn.icon-icons.com/icons2/4029/PNG/512/twitter_x_new_logo_x_rounded_icon_256078.png"
                     alt=""
@@ -42,11 +42,11 @@ const Footer = () => {
               </span>
             </a>
           </li>
-          <li class="icon instagram">
+          <li className="icon instagram">
             <a href="https://www.instagram.com/">
-              <span class="tooltip">Instagram</span>
+              <span className="tooltip">Instagram</span>
               <span>
-                <i class="fab fa-instagram">
+                <i className="fab fa-instagram">
                   <img
                     src="https://static.vecteezy.com/system/resources/thumbnails/018/930/413/small_2x/instagram-logo-instagram-icon-transparent-free-png.png"
                     alt=""
@@ -58,7 +58,7 @@ const Footer = () => {
           </li>
         </ul>
 
-        <div class="contact-info">
+        <div className="contact-info">
           <p>
             <strong>Dirección:</strong> 9 de Julio 740, San Miguel de Tucumán
           </p>
@@ -70,7 +70,7 @@ const Footer = () => {
           </p>
         </div>
 
-        <div class="hours">
+        <div className="hours">
           <p>
             <strong>Horarios de atención:</strong>
           </p>
