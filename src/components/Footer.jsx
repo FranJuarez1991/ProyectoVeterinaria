@@ -1,3 +1,6 @@
+import { Container } from "react-bootstrap";
+import "../css/Footer.css";
+
 const Footer = () => {
   return (
     <>
@@ -10,7 +13,7 @@ const Footer = () => {
               style={{ width: 100 }}
             />
           </a>
-          <p className="copy">Clínica Veterinaria</p>
+          <p className="copy"></p>
         </div>
 
         <ul className="wrapper">
@@ -22,21 +25,25 @@ const Footer = () => {
                   <img
                     src="https://static-00.iconduck.com/assets.00/facebook-color-icon-2048x2048-bfly1vxr.png"
                     alt=""
-                    width="50px"
+                    width="40px"
                   />
                 </i>
               </span>
             </a>
           </li>
-          <li className="icon twitter">
-            <a href="https://x.com/">
-              <span className="tooltip">Twitter</span>
+          <li className="icon whatsapp">
+            <a
+              href="https://wa.me/3815396107"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span className="tooltip">WhatsApp</span>
               <span>
-                <i className="fab fa-twitter">
+                <i className="fab fa-whatsapp">
                   <img
-                    src="https://cdn.icon-icons.com/icons2/4029/PNG/512/twitter_x_new_logo_x_rounded_icon_256078.png"
-                    alt=""
-                    width="100px"
+                    src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" /* Icono de WhatsApp */
+                    alt="WhatsApp"
+                    width="50px"
                   />
                 </i>
               </span>
@@ -50,7 +57,7 @@ const Footer = () => {
                   <img
                     src="https://static.vecteezy.com/system/resources/thumbnails/018/930/413/small_2x/instagram-logo-instagram-icon-transparent-free-png.png"
                     alt=""
-                    width="100px"
+                    width="50px"
                   />
                 </i>
               </span>
@@ -60,7 +67,8 @@ const Footer = () => {
 
         <div className="contact-info">
           <p>
-            <strong>Dirección:</strong> 9 de Julio 740, San Miguel de Tucumán
+            <strong>Dirección:</strong>Gral. Jose Maria Paz 700, San Miguel de
+            Tucumán
           </p>
           <p>
             <strong>Teléfono:</strong> (0381)-4551542

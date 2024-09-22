@@ -1,10 +1,13 @@
-import PaginaPrincipal from "./pages/PaginaPrincipal";
-import PaginaRegistro from "./pages/PaginaRegistro";
+import { BrowserRouter } from "react-router-dom";
+import RoutesView from "./routes/RoutesView";
+import "./css/App.css";
 
 const App = () => {
   return (
     <>
-      <PaginaRegistro />
+      <BrowserRouter>
+        <RoutesView />
+      </BrowserRouter>
     </>
   );
 };

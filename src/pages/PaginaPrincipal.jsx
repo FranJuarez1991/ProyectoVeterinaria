@@ -1,24 +1,25 @@
-import Carousel from "../components/Carousel";
-import Navbar from "../components/Navbar";
-import Card from "../components/Card";
-import Footer from "../components/Footer";
+import CarouselC from "../components/CarouselC";
+import CardC from "../components/CardC";
+import "../css/Principal.css";
+import { cambiarTituloPagina } from "../helpers/CambiarTitulo";
 
 const PaginaPrincipal = () => {
+  /*JS- Logica del componente */
+  cambiarTituloPagina("PaginaPrincipal");
   return (
+    /*Fragments */
     <>
-      <Navbar />
-      <Carousel />
+      <CarouselC />
       <main>
         <h2 className="text-center my-5">Nuestros Planes</h2>
         <div className="container">
           <div className="row">
-            <Card />
-            <Card />
-            <Card />
+            <CardC />
+            <CardC />
+            <CardC />
           </div>
         </div>
       </main>
-      <Footer />
     </>
   );
 };
