@@ -7,6 +7,8 @@ import Footer from "../components/Footer";
 import PaginaError from "../pages/PaginaError";
 import PaginaSobreNosotros from "../pages/PaginaSobreNosotros";
 import PaginaContacto from "../pages/PaginaContacto";
+import PaginaTurno from "../pages/PaginaTurno";
+import PaginaDetalleProducto from "../pages/PaginaDetalleProducto";
 
 const RoutesView = () => {
   return (
@@ -18,6 +20,11 @@ const RoutesView = () => {
         <Route path="/registro" element={<PaginaRegistro />} />
         <Route path="/sobre-nosotros" element={<PaginaSobreNosotros />} />
         <Route path="/contacto" element={<PaginaContacto />} />
+        <Route path="/Turnos" element={<PaginaTurno />} />
+        <Route
+          path="/detalle-producto/:id"
+          element={<PaginaDetalleProducto />}
+        />
         <Route path="*" element={<PaginaError />} />
       </Routes>
       <Footer />

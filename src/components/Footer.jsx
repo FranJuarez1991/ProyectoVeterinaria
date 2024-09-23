@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="d-flex logo-footer">
           <a href="./pagina_principal.html">
             <img
-              src="./img/LogoVeterinaria.png"
+              src="../img/LogoVeterinaria.png"
               alt="imagen-logofooter"
               style={{ width: 100 }}
             />

@@ -115,7 +115,7 @@ color: #222221;
     flex-direction: column;
   }
   .logo-footer {
-    position: relative;
+    position: sticky;
     justify-content: center;
     align-items: center;
   }

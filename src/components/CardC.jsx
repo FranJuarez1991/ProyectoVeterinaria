@@ -1,20 +1,23 @@
-import Button from "react-bootstrap/Button";
-import Card from "react-bootstrap/Card";
-import { Col } from "react-bootstrap";
+import { Card, Col, Nav } from "react-bootstrap";
+import "../css/CardC.css";
+import { Link } from "react-router-dom";
 
-const CardC = () => {
+const CardC = ({ urlImage, title, price, description, idProduct }) => {
   return (
     <>
       <Col sm="12" md="6" lg="4">
-        <Card>
-          <Card.Img variant="top" src="./img/05.jpeg" />
+        <Card className="card-producto my-3">
+          <Card.Img variant="top" src={urlImage} />
           <Card.Body>
-            <Card.Title>Primeros Pasos</Card.Title>
-            <Card.Text>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </Card.Text>
-            <Button variant="danger">Suscribirse</Button>
+            <Card.Title className="text-truncate">{title}</Card.Title>
+            <Card.Text>${price}</Card.Text>
+            <Card.Text className="text-truncate">{description}</Card.Text>
+            <Link
+              className="BotonCard btn btn-success"
+              to={`/detalle-producto/${idProduct}`}
+            >
+              Ver Mas
+            </Link>
           </Card.Body>
         </Card>
       </Col>

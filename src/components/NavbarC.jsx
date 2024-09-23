@@ -1,6 +1,7 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
 import "../css/Navbar.css";
 import { NavLink } from "react-router-dom";
 
@@ -11,7 +12,7 @@ const NavbarC = () => {
         <Container>
           <NavLink to="/">
             <img
-              src="./img/LogoVeterinaria.png"
+              src="../img/LogoVeterinaria.png"
               alt="Logo"
               width="100" // Reducido el tamaño del logo
               height="100"
@@ -31,6 +32,11 @@ const NavbarC = () => {
               <NavLink to="/contacto" className="nav-link">
                 Contacto
               </NavLink>
+              <NavDropdown title="Turnos" id="basic-nav-dropdown">
+                <NavDropdown.Item href="/Turnos">
+                  Reservar Turno
+                </NavDropdown.Item>
+              </NavDropdown>
             </Nav>
             <Nav className="ms-auto">
               <NavLink to="/iniciar-sesion" className="nav-link">
