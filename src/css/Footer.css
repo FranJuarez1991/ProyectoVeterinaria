@@ -1,13 +1,13 @@
 footer {
+  margin: 0; /* Sin margen */
+  padding: 0; /* Sin padding */
   display: flex;
   justify-content: space-evenly;
   font-family: "Poppins", sans-serif;
   place-items: center;
-  /* background: linear-gradient(315deg, #ffffff, #d7e1ec); */
-  background-color: #19326d;
-}
-.contact-info{
-color: #222221;
+   background: linear-gradient(90deg, #8e8ccf, #A5D6A7);
+ /* background-color: #19326d;*/
+ height: 200px; /* Establece una altura fija */
 }
 .logo-footer {
   display: flex;
@@ -19,10 +19,6 @@ color: #222221;
 .logo-footer img {
   margin-top: 10px;
   width: 100px;
-}
-.copy {
-  display: flex;
-  color: white;
 }
 
 .wrapper {
@@ -136,5 +132,5 @@ color: #222221;
 }
 
 .contact-info {
-color: #19326d;
+color: #05080f;
 }

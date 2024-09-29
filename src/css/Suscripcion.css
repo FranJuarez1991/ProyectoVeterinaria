@@ -1,0 +1,51 @@
+.suscripcion-background {
+  background: linear-gradient(90deg, #908fad, #a7b6a8); /* Cambia este color según tu preferencia */
+  background-image: url('../img/Suscripcion.jpg');
+  padding: 50px ;
+}
+
+h2 {
+  color: #333;
+  font-weight: bold;
+}
+
+button {
+  background-color: #007bff;
+  border: none;
+}
+
+button:hover {
+  background-color: #12da80;
+}
+
+.Card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  
+  
+}
+
+input, textarea {
+  border-radius: 5px;
+}
+
+.form-control.is-invalid {
+  border-color: #dc3545;
+}
+.custom-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 40px; /* Aumentar el padding para hacer la tarjeta más grande */
+  width: 100%; /* Asegurarte de que ocupe el 100% del ancho de la columna */
+  max-width: 600px; /* Establecer un ancho máximo si es necesario */
+  margin: 50px; /* Centrar la tarjeta */
+}
+
+/* Estilo para h2 dentro de la tarjeta */
+.custom-card h2 {
+  font-size: 1.5rem; /* Ajustar el tamaño de la fuente del título */
+  color: #333; /* Color del título */
+  font-weight: bold; /* Estilo del título */
+}

@@ -2,7 +2,9 @@
     height: 300px;
     object-fit: cover;
     
+    
 }
+
 .BotonCard {
  background-color: #28a745 !important; /* Verde Bootstrap */
   border-color: #28a745 !important; /* Asegura que también el borde sea verde */

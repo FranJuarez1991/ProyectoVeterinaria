@@ -8,4 +8,8 @@ body {
   position: relative;
   /* Medida mínima */
   min-height: 100vh;
+  margin: 0;
+  padding: 0;
+
 }
+
