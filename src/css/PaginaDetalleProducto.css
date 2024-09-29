@@ -1,4 +1,14 @@
 .col-izq img{
 width: 300px;
+margin-top: 100px;
 
+}
+.detalleprod{
+    background-color: blue;
+}
+.detalleprod img {
+  background-color: transparent; /* Asegura que el fondo sea transparente */
+  border: none; /* Elimina bordes adicionales si los hay */
+  max-width: 100%; /* Asegura que la imagen no exceda su contenedor */
+  height: auto; /* Mantiene la proporción de la imagen */
 }

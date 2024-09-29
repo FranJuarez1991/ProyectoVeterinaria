@@ -7,7 +7,7 @@ const PaginaRegistro = () => {
     <>
       <br />
       <div className="d-flex justify-content-center py-5">
-        <FormC />
+        <FormC idPagina={"registrarse"} />
       </div>
     </>
   );

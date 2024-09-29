@@ -4,7 +4,7 @@ import "../css/Footer.css";
 const Footer = () => {
   return (
     <>
-      <footer className="py-5 text-center bg-body-tertiary mt-5">
+      <footer className="py-0 text-center bg-body-tertiary mt-0">
         <div className="d-flex logo-footer">
           <a href="./pagina_principal.html">
             <img
@@ -84,7 +84,6 @@ const Footer = () => {
           </p>
           <p>Lunes a Viernes: 9:00 AM - 20:00 PM</p>
           <p>Sábados: 9:00 AM - 2:00 PM</p>
-          <p>Domingos: Cerrado</p>
         </div>
       </footer>
     </>

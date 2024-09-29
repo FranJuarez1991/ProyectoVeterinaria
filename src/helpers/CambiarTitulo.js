@@ -15,6 +15,12 @@ export const cambiarTituloPagina = (nombrePagina) => {
     case "PaginaTurno":
       document.title = "Turno";
       break;
+    case "PagSuscripcion":
+      document.title = "Suscripcion";
+      break;
+    case "PaginaProducto":
+      document.title = "PaginaProducto";
+      break;
 
     default:
       document.title = "ERROR";
