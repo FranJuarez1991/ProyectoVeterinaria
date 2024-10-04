@@ -28,3 +28,44 @@
   max-height: 100%;
   width: auto;
 }
+
+.nav-link.favorito img {
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.nav-link.favorito img:hover {
+  transform: scale(1.2); /* Aumenta el tamaño al pasar el ratón */
+  filter: brightness(150%); /* Aumenta el brillo */
+}
+
+.nav-link.carrito img {
+  transition: transform 0.3s ease, filter 0.3s ease;
+    margin-left: 10px; /* Añade un margen para separar si tienes más íconos */
+
+}
+
+.nav-link.carrito img:hover {
+  transform: scale(1.2); /* Aumenta el tamaño al pasar el ratón */
+  filter: brightness(150%); /* Aumenta el brillo */
+}
+.nav-link.logout img:hover {
+  transform: scale(1.2); /* Aumenta el tamaño al pasar el ratón */
+  filter: brightness(150%); /* Aumenta el brillo */
+}
+.nav-link.favorito,
+.nav-link.carrito {
+  float: right;
+  margin-left: 10px; /* Para separar los iconos entre sí */
+}
+
+.nav {
+  display: flex; /* Activa flexbox en el nav */
+  justify-content: space-between; /* Espacia elementos a los extremos */
+  align-items: center; /* Alinea verticalmente los elementos */
+}
+
+.ms-auto {
+  margin-left: auto; /* Empuja este contenedor hacia la derecha */
+  display: flex; /* Hace que el contenedor de íconos use flexbox */
+  align-items: center; /* Alinea verticalmente los íconos */
+}

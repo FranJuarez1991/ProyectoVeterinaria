@@ -1,0 +1,15 @@
+.weather-card {
+  background: linear-gradient(135deg, #dac868, #aacde6); /* Degradado amarillo a azul suave */
+  border: 10px; 
+  border-radius: 15px; /* Bordes redondeados */
+  box-shadow: 0 4px 20px rgba(172, 7, 7, 0.1); /* Sombra suave */
+  color: hsl(0, 19%, 6%); /* Color de texto oscuro para contraste */
+  width: 100%; /* Ancho completo para responsividad */
+}
+
+@media (min-width: 768px) {
+  .weather-card {
+    width: 300px; /* Ancho fijo para pantallas más grandes */
+  }
+}
+

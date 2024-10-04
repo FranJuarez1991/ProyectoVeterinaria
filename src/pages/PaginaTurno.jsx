@@ -1,18 +1,3 @@
-//import { cambiarTituloPagina } from "../helpers/CambiarTitulo";
-
-//const PaginaTurno = () => {
-//  cambiarTituloPagina("PaginaTurno");
-//  return (
-//    <>
-//     <br />
-//     <br />
-//     <h1>REGISTRO TURNO</h1>
-//   </>
-// );
-//};
-
-//export default PaginaTurno;
-
 import React, { useState } from "react";
 import { cambiarTituloPagina } from "../helpers/CambiarTitulo";
 import "../css/TurnoForm.css";

@@ -93,32 +93,35 @@ const NavbarC = () => {
             )}
             {usuarioLogueado?.role === "admin" && (
               <>
-                <NavLink to="/admin/usuario" className="nav-link">
+                <NavLink to="/admin/usuarios" className="nav-link">
                   Panel Usuarios
                 </NavLink>
                 <NavLink to="/admin/productos" className="nav-link">
                   Panel Productos
+                </NavLink>
+                <NavLink to="/admin/pacientes" className="nav-link">
+                  Panel Pacientes
                 </NavLink>
                 <NavLink to="/inicio-usuario" className="nav-link">
                   Cambiar Vista Usuario
                 </NavLink>
               </>
             )}
-            {usuarioLogueado?.role === "usuario" && (
-              <>
-                <NavLink to="usuario/favoritos" className="nav-link">
-                  Favoritos
-                </NavLink>
-                <NavLink to="usuario/carrito" className="nav-link">
-                  Carrito
-                </NavLink>
-              </>
-            )}
           </Nav>
-          <Nav className="ms-auto">
+          <Nav className="ms-auto d-flex align-items-center">
             {usuarioLogueado ? (
-              <NavLink to="#" className="nav-link" onClick={handleLogout}>
+              <NavLink
+                to="#"
+                className="nav-link logout"
+                onClick={handleLogout}
+              >
                 Cerrar Sesión
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/12208/12208970.png"
+                  alt="Favorito"
+                  width="50"
+                  height="50"
+                />
               </NavLink>
             ) : (
               <>
@@ -127,6 +130,26 @@ const NavbarC = () => {
                 </NavLink>
                 <NavLink to="/registro" className="nav-link">
                   Registrarse
+                </NavLink>
+              </>
+            )}
+            {usuarioLogueado?.role === "usuario" && (
+              <>
+                <NavLink to="usuario/favoritos" className="nav-link favorito">
+                  <img
+                    src="../img/Favorito.png"
+                    alt="Favorito"
+                    width="50"
+                    height="50"
+                  />
+                </NavLink>
+                <NavLink to="usuario/carrito" className="nav-link carrito">
+                  <img
+                    src="../img/Carrito.png"
+                    alt="Carrito"
+                    width="50"
+                    height="50"
+                  />
                 </NavLink>
               </>
             )}
