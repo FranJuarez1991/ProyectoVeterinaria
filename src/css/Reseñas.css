@@ -1,18 +1,44 @@
 .reseñas-container {
-  margin: 0px;
-  padding: 20px;
-  background: linear-gradient(135deg, #a2e4f4, #b2f7ef, #d4f7b2);
-  border-radius: 10px;
-}
-.reseña-estrellas {
   display: flex;
-  justify-content: center;
-  gap: 5px;
-  margin-top: 10px;
+  flex-direction: column; /* Cambiar a columna por defecto */
+  padding: 20px; /* Espaciado alrededor */
+  background: linear-gradient(90deg, #dadadfc8, #A5D6A7); /* Fondo claro y fresco */
+  border-radius: 15px; /* Bordes redondeados */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
-h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
+.clima-section, .reseñas-section {
+  margin-bottom: 20px; /* Espacio entre secciones */
 }
 
+@media (min-width: 768px) {
+  .reseñas-container {
+    flex-direction: row; /* Cambiar a fila en pantallas más grandes */
+  }
+
+  .clima-section {
+    flex: 0 0 300px; /* Ancho fijo para la sección del clima */
+    margin-right: 20px; /* Espaciado a la derecha */
+  }
+
+  .reseñas-section {
+    flex: 1; /* Permite que esta sección tome el espacio restante */
+  }
+}
+.reseña-card {
+  background: linear-gradient(135deg, #92a7b9, #a2e3b6); /* Degradado suave */
+  border: none; /* Sin borde */
+  border-radius: 15px; /* Bordes redondeados */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  color: #ffffff; /* Color de texto oscuro para contraste */
+  transition: transform 0.3s; /* Efecto de transición al pasar el ratón */
+}
+
+.reseña-card:hover {
+  transform: scale(1.05); /* Efecto de aumento al pasar el ratón */
+}
+
+
+.reseña-estrellas {
+  margin-top: 10px; /* Espaciado superior */
+}

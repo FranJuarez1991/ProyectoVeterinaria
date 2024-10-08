@@ -7,10 +7,7 @@ import { useEffect, useState } from "react";
 import CardPlanesC from "../components/CardPlanesC";
 import ReseñasCarousel from "../components/CarrouselReseñaC";
 
-/*use - hooks = funcion / metodo */
 const PaginaPrincipal = () => {
-  /*JS- Logica del componente */
-  /*const [estado, funcionqueseteaelvalordelestado] = useState([estado, setEstado]); */
   const [productosApi, setProductosApi] = useState([]);
   cambiarTituloPagina("PaginaPrincipal");
 
@@ -18,15 +15,17 @@ const PaginaPrincipal = () => {
     try {
       const productos = await useApiFakeStore();
       setProductosApi(productos);
-    } catch (error) {}
+      localStorage.setItem("productos", JSON.stringify(productos)); //se envia al LS para controlar el borrado
+    } catch (error) {
+      console.error("Error al obtener los productos: ", error);
+    }
   };
-  /*Inicializa - monta -actualiza - desmonta */
+
   useEffect(() => {
     obtenerProductos();
   }, []);
 
   return (
-    /*Fragments */
     <>
       <CarouselC />
       <main>
@@ -41,15 +40,11 @@ const PaginaPrincipal = () => {
                 price={producto.price}
                 description={producto.description}
                 idProduct={producto.id}
-              /> /*key diferencia los componentes que se mapean  */
+              />
             ))}
-            {/*<CardC urlImage={"./img/05.jpeg"} />
-            <CardC urlImage={"./img/5-10.jpeg"} />
-            <CardC urlImage={"./img/10mas.jpg"} />*/}
           </div>
         </div>
         <h2 className="text-center my-5">Nuestros Planes</h2>
-
         <div className="container">
           <div className="row">
             <CardPlanesC

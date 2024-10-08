@@ -1,6 +1,9 @@
 import "../css/Reseñas.css";
 import { Carousel, Card } from "react-bootstrap";
 import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
+import Weather from "./Weather";
+import "../css/Clima.css"; // Archivo CSS para estilos
+import "../css/Reseñas.css";
 
 // Datos de ejemplo de reseñas
 const reseñas = [
@@ -45,29 +48,36 @@ const generarEstrellas = (calificacion) => {
   }
   return estrellas;
 };
-
-const ReseñasCarousel = () => {
+const ReseñasConClima = () => {
   return (
-    <div className="reseñas-container my-0">
-      <h2 className="text-center">Lo que nuestros clientes dicen</h2>
-      {/* controls={false} desactiva las flechas laterales */}
-      <Carousel controls={false}>
-        {reseñas.map((reseña) => (
-          <Carousel.Item key={reseña.id}>
-            <Card className="text-center mx-auto" style={{ width: "18rem" }}>
-              <Card.Body>
-                <Card.Title>{reseña.nombre}</Card.Title>
-                <Card.Text>{reseña.comentario}</Card.Text>
-                <div className="reseña-estrellas">
-                  {generarEstrellas(reseña.estrellas)}
-                </div>
-              </Card.Body>
-            </Card>
-          </Carousel.Item>
-        ))}
-      </Carousel>
+    <div className="reseñas-container reseñas-clima-container">
+      <div className="clima-section">
+        <h2>El Clima Hoy...</h2>
+        <Weather />
+      </div>
+      <div className="reseñas-section">
+        <h2 className="text-center">Lo que nuestros clientes dicen</h2>
+        <Carousel controls={false}>
+          {reseñas.map((reseña) => (
+            <Carousel.Item key={reseña.id}>
+              <Card
+                className="text-center mx-auto reseña-card"
+                style={{ width: "18rem" }}
+              >
+                <Card.Body>
+                  <Card.Title>{reseña.nombre}</Card.Title>
+                  <Card.Text>{reseña.comentario}</Card.Text>
+                  <div className="reseña-estrellas">
+                    {generarEstrellas(reseña.estrellas)}
+                  </div>
+                </Card.Body>
+              </Card>
+            </Carousel.Item>
+          ))}
+        </Carousel>
+      </div>
     </div>
   );
 };
 
-export default ReseñasCarousel;
+export default ReseñasConClima;

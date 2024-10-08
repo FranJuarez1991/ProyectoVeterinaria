@@ -19,12 +19,14 @@ const FormC = ({ idPagina }) => {
   const [errors, setErrors] = useState({});
   const [responseMessage, setResponseMessage] = useState("");
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [turnos, setTurnos] = useState([]); // Estado para los turnos
 
   // Efecto para comprobar si el usuario ya está autenticado
   useEffect(() => {
-    const storedUser = sessionStorage.getItem("usuarios");
-    if (storedUser) {
+    const storedUser = JSON.parse(sessionStorage.getItem("usuarios"));
+    if (storedUser && storedUser.login) {
       setIsAuthenticated(true);
+      setTurnos(storedUser.tur || []); // Carga los turnos del usuario
     }
   }, []);
 
@@ -51,7 +53,6 @@ const FormC = ({ idPagina }) => {
     if (!usuario) newErrors.errorUsuario = true;
     if (!contrasenia) newErrors.errorContrasenia = true;
     if (!rcontrasenia) newErrors.errorRContrasenia = true;
-    /*if (!Check) newErrors.errorCheck = true;*/
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
@@ -88,6 +89,7 @@ const FormC = ({ idPagina }) => {
       login: false,
       cart: [],
       fav: [],
+      tur: [], // Array para turnos
     };
 
     usuariosLocalStorage.push(nuevoUsuario);
@@ -112,24 +114,47 @@ const FormC = ({ idPagina }) => {
 
     const usuariosLocalStorage =
       JSON.parse(localStorage.getItem("usuarios")) || [];
-
     const usuarioExiste = usuariosLocalStorage.find(
       (user) => user.usuario === usuario && user.contrasenia === contrasenia
     );
 
     if (usuarioExiste) {
-      sessionStorage.setItem("usuarios", JSON.stringify(usuarioExiste));
-      setIsAuthenticated(true); // Actualiza el estado de autenticación
+      const usuarioLogueado = { ...usuarioExiste, login: true };
+      sessionStorage.setItem("usuarios", JSON.stringify(usuarioLogueado));
 
-      setResponseMessage("Inicio de sesión exitoso. Redirigiendo...");
-      setTimeout(() => {
-        navigate("/"); // Cambia la ruta según tu aplicación
-      }, 2000);
+      setIsAuthenticated(true); // Actualiza el estado
+      setTurnos(usuarioLogueado.tur || []); // Carga los turnos
+      setResponseMessage("Inicio de sesión exitoso.");
+
+      // Redirigir a la página de inicio
+      navigate("/"); // Redirige a la página de inicio
+      window.location.reload();
     } else {
       setResponseMessage("Usuario o contraseña incorrectos.");
     }
   };
 
+  // Función para añadir un nuevo turno
+  const handleAddTurno = (newTurno) => {
+    const updatedTurnos = [...turnos, newTurno];
+    setTurnos(updatedTurnos);
+
+    // Actualizar el usuario en el sessionStorage
+    const storedUser = JSON.parse(sessionStorage.getItem("usuarios"));
+    const usuarioActualizado = { ...storedUser, tur: updatedTurnos };
+    sessionStorage.setItem("usuarios", JSON.stringify(usuarioActualizado));
+  };
+
+  // Lógica para cerrar sesión
+  const handleLogout = () => {
+    const storedUser = JSON.parse(sessionStorage.getItem("usuarios"));
+    if (storedUser) {
+      const usuarioSinLogin = { ...storedUser, login: false };
+      sessionStorage.setItem("usuarios", JSON.stringify(usuarioSinLogin));
+    }
+    setIsAuthenticated(false); // Actualiza el estado de autenticación
+    setResponseMessage("Has cerrado sesión correctamente.");
+  };
   return (
     <div className="container mt-5">
       <div className="row justify-content-center">
@@ -137,93 +162,56 @@ const FormC = ({ idPagina }) => {
           <Form className="py-5 form-registro">
             {isAuthenticated ? (
               <div className="text-center">
-                <h5>¡Bienvenido, {formLogin.usuario}!</h5>
-                <Button
-                  variant="primary"
-                  onClick={() => {
-                    sessionStorage.removeItem("usuarios");
-                    setIsAuthenticated(false);
-                  }}
-                >
+                <h5>¡Bienvenido {formLogin.usuario}!</h5>
+                {/*<Button variant="primary" onClick={handleLogout}>
                   Cerrar sesión
-                </Button>
+                </Button>*/}
               </div>
             ) : (
               <>
                 {idPagina === "registrarse" ? (
-                  <>
-                    {/* Formulario de Registro */}
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                  // Formulario de Registro
+                  <div>
+                    <Form.Group className="mb-3">
                       <Form.Label>Usuario</Form.Label>
                       <Form.Control
                         name="usuario"
                         type="text"
                         placeholder="Ingresar Usuario"
                         onChange={handleChangeRegister}
-                        className={
-                          errors.errorUsuario
-                            ? "form-control is-invalid"
-                            : "form-control"
-                        }
                       />
-                      {errors.errorUsuario && (
-                        <p className="text-danger">Campo Usuario vacío</p>
-                      )}
                     </Form.Group>
-
-                    <Form.Group className="mb-3" controlId="formBasicPassword">
+                    <Form.Group className="mb-3">
                       <Form.Label>Contraseña</Form.Label>
                       <Form.Control
                         name="contrasenia"
                         type="password"
                         placeholder="Password"
                         onChange={handleChangeRegister}
-                        className={
-                          errors.errorContrasenia
-                            ? "form-control is-invalid"
-                            : "form-control"
-                        }
                       />
-                      {errors.errorContrasenia && (
-                        <p className="text-danger">Campo Contraseña vacío</p>
-                      )}
                     </Form.Group>
-
-                    <Form.Group className="mb-3" controlId="formBasicPassword">
+                    <Form.Group className="mb-3">
                       <Form.Label>Repetir Contraseña</Form.Label>
                       <Form.Control
                         name="rcontrasenia"
                         type="password"
-                        placeholder="Repetir Contraseña"
+                        placeholder="Repetir Password"
                         onChange={handleChangeRegister}
-                        className={
-                          errors.errorRContrasenia
-                            ? "form-control is-invalid"
-                            : "form-control"
-                        }
                       />
-                      {errors.errorRContrasenia && (
-                        <p className="text-danger">
-                          Campo Repetir Contraseña vacío
-                        </p>
-                      )}
                     </Form.Group>
+
+                    <Button
+                      variant="primary"
+                      type="submit"
+                      onClick={handleClickRegister}
+                    >
+                      Registrarse
+                    </Button>
 
                     {responseMessage && (
                       <p className="text-info text-center">{responseMessage}</p>
                     )}
-
-                    <div className="text-center">
-                      <Button
-                        variant="primary"
-                        type="submit"
-                        onClick={handleClickRegister}
-                        className="w-100"
-                      >
-                        Registrarse
-                      </Button>
-                    </div>
-                  </>
+                  </div>
                 ) : (
                   <>
                     {/* Formulario de Inicio de Sesión */}
@@ -256,7 +244,6 @@ const FormC = ({ idPagina }) => {
                         variant="primary"
                         type="submit"
                         onClick={handleClickLogin}
-                        className="w-100"
                       >
                         Iniciar Sesión
                       </Button>

@@ -15,6 +15,9 @@ import PaginaInicioAdmin from "../pages/PaginaInicioAdmin";
 import PaginaInicioUsuario from "../pages/PaginaInicioUsuario";
 import PaginaUsuarioFavoritos from "../pages/PaginaUsuarioFavoritos";
 import PaginaUsuarioCarrito from "../pages/PaginaUsuarioCarrito";
+import PaginaAdminUsuarios from "../pages/PaginaAdminUsuarios";
+import PaginaAdminProductos from "../pages/PaginaAdminProductos";
+import PaginaAdminPacientes from "../pages/PaginaAdminPacientes";
 
 const RoutesView = () => {
   return (
@@ -23,6 +26,9 @@ const RoutesView = () => {
       <Routes>
         <Route path="/" element={<PaginaPrincipal />} />
         <Route path="/inicio-admin" element={<PaginaInicioAdmin />} />
+        <Route path="/admin/usuarios" element={<PaginaAdminUsuarios />} />
+        <Route path="/admin/productos" element={<PaginaAdminProductos />} />
+        <Route path="/admin/pacientes" element={<PaginaAdminPacientes />} />
         <Route path="/inicio-usuario" element={<PaginaInicioUsuario />} />
         <Route path="/usuario/favoritos" element={<PaginaUsuarioFavoritos />} />
         <Route path="/usuario/carrito" element={<PaginaUsuarioCarrito />} />
