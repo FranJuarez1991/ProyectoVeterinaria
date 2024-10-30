@@ -1,6 +1,6 @@
 .suscripcion-background {
   background: linear-gradient(90deg, #908fad, #a7b6a8); /* Cambia este color según tu preferencia */
-  background-image: url('../img/Suscripcion.jpg');
+  background-image: url('https://res.cloudinary.com/dx4gdjmxy/image/upload/v1730249213/Suscripcion_bx2jsh.jpg');
   padding: 50px ;
 }
 
