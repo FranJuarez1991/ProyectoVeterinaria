@@ -3,7 +3,7 @@
       rgba(0, 0, 0, 0.5),
       rgba(0, 0, 0, 0.5)
     ),
-    url('../img/Sobre_Nosotros.jpg'); /* Cambia la ruta de la imagen */
+    url('https://res.cloudinary.com/dx4gdjmxy/image/upload/v1730249209/Sobre_Nosotros_xehrxz.jpg'); /* Cambia la ruta de la imagen */
   background-size: cover;
   background-position: center;
   padding: 100px 0;
