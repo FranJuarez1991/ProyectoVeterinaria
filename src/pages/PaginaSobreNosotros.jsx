@@ -25,7 +25,7 @@ const PaginaSobreNosotros = () => {
           <div class="row mt-5">
             <div class="col-lg-4 col-md-6 col-sm-12 mt-4">
               <div class="text-center">
-                <img src="../img/Francisco.jpg" alt="" class="card-image" />
+                <img src="https://res.cloudinary.com/dx4gdjmxy/image/upload/v1730249209/Francisco_p3xfcg.jpg" alt="" class="card-image" />
               </div>
               <div class="text-center">
                 <h3 class="text-light">Francisco Juarez - DEVELOPER</h3>

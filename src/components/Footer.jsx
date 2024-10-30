@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="d-flex logo-footer">
           <a href="./pagina_principal.html">
             <img
-              src="../img/LogoVeterinaria.png"
+              src="https://res.cloudinary.com/dx4gdjmxy/image/upload/v1730249212/LogoVeterinaria_hi01x3.png"
               alt="imagen-logofooter"
               style={{ width: 100 }}
             />

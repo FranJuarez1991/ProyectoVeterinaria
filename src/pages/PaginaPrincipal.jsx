@@ -50,19 +50,19 @@ const PaginaPrincipal = () => {
             <CardPlanesC
               title={"Primeros Pasos "}
               price={"15000 x MES"}
-              urlImage={"./img/05.jpeg"}
+              urlImage={"https://res.cloudinary.com/dx4gdjmxy/image/upload/v1730249207/05_z4kvky.jpg"}
               description={"servicios para mascotas de 0 a 5 años"}
             />
             <CardPlanesC
               title={"Madurando "}
               price={"25000 x MES"}
-              urlImage={"./img/5-10.jpeg"}
+              urlImage={"https://res.cloudinary.com/dx4gdjmxy/image/upload/v1730249207/5-10_hd0kbx.jpg"}
               description={"servicios para mascotas de 5 a 10 años"}
             />
             <CardPlanesC
               title={"Adultos "}
               price={"30000 x MES"}
-              urlImage={"./img/10mas.jpg"}
+              urlImage={"https://res.cloudinary.com/dx4gdjmxy/image/upload/v1730249208/10mas_de7u6d.jpg"}
               description={"servicios para mascotas de más de 10 años"}
             />
           </div>
