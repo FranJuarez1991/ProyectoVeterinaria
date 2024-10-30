@@ -50,7 +50,7 @@ const NavbarC = () => {
           }
         >
           <img
-            src="../img/LogoVeterinaria.png"
+            src="https://res.cloudinary.com/dx4gdjmxy/image/upload/v1730249212/LogoVeterinaria_hi01x3.png"
             alt="Logo"
             width="100"
             height="100"
@@ -137,7 +137,7 @@ const NavbarC = () => {
               <>
                 <NavLink to="usuario/favoritos" className="nav-link favorito">
                   <img
-                    src="../img/Favorito.png"
+                    src="https://res.cloudinary.com/dx4gdjmxy/image/upload/v1730249209/Favorito_cvkda3.png"
                     alt="Favorito"
                     width="50"
                     height="50"
@@ -145,7 +145,7 @@ const NavbarC = () => {
                 </NavLink>
                 <NavLink to="usuario/carrito" className="nav-link carrito">
                   <img
-                    src="../img/Carrito.png"
+                    src="https://res.cloudinary.com/dx4gdjmxy/image/upload/v1730249208/Carrito_csa9nc.png"
                     alt="Carrito"
                     width="50"
                     height="50"
