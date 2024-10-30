@@ -6,7 +6,7 @@ const CarouselC = () => {
       <Carousel fade>
         <Carousel.Item>
           <img
-            src="./img/Carrousel1.jpg"
+            src="https://res.cloudinary.com/dx4gdjmxy/image/upload/v1730249208/Carrousel1_bn8cht.jpg"
             className="d-block w-100"
             alt="..."
             style={{ height: "600px", objectFit: "cover" }}
@@ -19,7 +19,7 @@ const CarouselC = () => {
         </Carousel.Item>
         <Carousel.Item>
           <img
-            src="./img/Carrousel2.jpg"
+            src="https://res.cloudinary.com/dx4gdjmxy/image/upload/v1730249208/Carrousel2_odkwus.jpg"
             className="d-block w-100"
             alt="..."
             style={{ height: "600px", objectFit: "cover" }}
@@ -32,7 +32,7 @@ const CarouselC = () => {
         </Carousel.Item>
         <Carousel.Item>
           <img
-            src="./img/Carrousel3.jpg"
+            src="https://res.cloudinary.com/dx4gdjmxy/image/upload/v1730249208/Carrousel3_yeazok.jpg"
             className="d-block w-100"
             alt="..."
             style={{ height: "600px", objectFit: "cover" }}
